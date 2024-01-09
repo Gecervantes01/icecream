@@ -9,8 +9,24 @@
 </head>
 <body>
     <h1>Thank you for your order!</h1>
+
+    <?php
+        echo "<pre>";
+        var_dump($_POST);
+        echo "</pre>";
+
+        $scoops = $_POST['scoops'];
+        $flavors = $_POST['flavor'];
+        $cone = $_POST['cone'];
+        $flavorString = implode(", ", $flavors);
+
+        //Print summary:
+        echo "<div>
+                 <p>$scoops scoops</p>
+                 <p>Flavors: $flavorString</p>
+                 <p>Cone: $cone</p>
+              </div>"
+    ?>
+
 </body>
 </html>
-
-<?php
-$numScoops = $_POST["scoop"];
