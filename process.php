@@ -24,7 +24,13 @@
         var_dump($_POST);
         echo "</pre>";
 
-        $scoops = $_POST['scoops'];
+        if(!empty($scoops)) {
+            $scoops = $_POST['scoops'];
+        } else {
+            echo "<p>Enter Scoops!</p>";
+            return;
+        }
+
         $flavors = $_POST['flavor'];
         $cone = $_POST['cone'];
         $flavorString = implode(", ", $flavors);
